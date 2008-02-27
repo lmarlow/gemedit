@@ -1,8 +1,8 @@
 require 'gemedit/version'
 
-AUTHOR = 'FIXME full name'  # can also be an array of Authors
-EMAIL = "FIXME email"
-DESCRIPTION = "description of gem"
+AUTHOR = 'Lee Marlow'  # can also be an array of Authors
+EMAIL = "lmarlow@rubyforge.org"
+DESCRIPTION = "A utility to view a gem's source in your favorite editor"
 GEM_NAME = 'gemedit' # what ppl will type to install your gem
 RUBYFORGE_PROJECT = 'gemedit' # The unix name for your project
 HOMEPATH = "http://#{RUBYFORGE_PROJECT}.rubyforge.org"
