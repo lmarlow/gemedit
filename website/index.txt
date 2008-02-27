@@ -1,4 +1,4 @@
-h1. View Source of Installed Gems
+h1. Gem Editor
 
 h1. &#x2192; 'gemedit'
 
