@@ -1,8 +1,6 @@
 History.txt
 License.txt
-Manifest.txt
 README.txt
-Rakefile
 bin/gemedit
 lib/gemedit.rb
 lib/gemedit/version.rb
