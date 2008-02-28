@@ -12,7 +12,7 @@ h2. Installing
 <pre><code>sudo gem install gemedit</code></pre>
 
 If you would like some basic command completion for installed gems add the following to your <code>~/.bashrc</code> or <code>~/.profile</code>:
-<pre><code>complete -o dirnames -C /usr/bin/gemedit --complete gemedit</code></pre>
+<pre><code>complete -C "/usr/bin/gemedit --complete" gemedit</code></pre>
 
 h2. Demonstration of usage
 
