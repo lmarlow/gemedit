@@ -11,25 +11,11 @@ end
 
 require 'optparse'
 
-def command_completion
-  exit 0 unless /\gemedit\b/ =~ ENV["COMP_LINE"]
-
-  after_match = $'
-  gem_match = (after_match.empty? || after_match =~ /\s$/) ? nil : after_match.split.last
-  gem_names = if gem_match
-      Gem.source_index.inject([]) { |ary, (full_name, spec)| ary << full_name if /^#{Regexp.escape gem_match}/i =~ full_name; ary }
-    else
-      Gem.source_index.map { |full_name, spec| full_name }
-  end
-
-  puts gem_names
-  exit 0
-end
-
 OPTIONS = {
   :verbose => false,
   :editor => ENV['VISUAL'] || ENV['EDITOR'] || 'vi'
 }
+
 parser = OptionParser.new do |opts|
   opts.banner = <<BANNER
 Open the source of installed gems in your favorite editor
@@ -39,16 +25,32 @@ Usage: #{File.basename($0)} GEM_NAME...
 Options are:
 BANNER
   opts.separator ""
-  opts.on("--complete",
-          "Used for gem name completion on the command line") { command_completion }
-  opts.on("-e", "--editor EDITOR", String,
+  opts.on("-e", "--editor=EDITOR", String,
           "The editor to open the gems with", "Default: #{OPTIONS[:editor]}") { |editor| OPTIONS[:editor] = editor }
   opts.on("-v", "--verbose",
           "Enable verbose logging", "Default: #{OPTIONS[:verbose]}") { |verbose| OPTIONS[:verbose] = true }
   opts.on("-h", "--help",
           "Show this help message.") { puts opts; exit }
-  opts.parse!(ARGV)
 end
+
+if ARGV.include?('--complete')
+  exit 0 unless /\b#{Regexp.escape(File.basename($0))}\b/ =~ ENV["COMP_LINE"]
+  after_match = $'
+  complete_term = (after_match.empty? || after_match =~ /\s$/) ? nil : after_match.split.last
+  completions = if complete_term =~ /\A-/
+    parser.top.list.select { |opt| OptionParser::Switch === opt }.inject([]) { |ary, opt|
+      ary + opt.short + opt.long
+    }.select { |opt_string| opt_string =~ /\A#{Regexp.escape(complete_term)}/ }
+  elsif complete_term
+    Gem.source_index.inject([]) { |ary, (full_name, spec)| ary << full_name if /^#{Regexp.escape(complete_term)}/i =~ full_name; ary }
+  else
+    Gem.source_index.map { |full_name, spec| full_name }
+  end
+  puts completions
+  exit 0
+end
+
+parser.parse!(ARGV)
 
 def get_gem(gem_name)
   possible_gems = Gem.source_index.inject([]) { |ary, (name, spec)| ary << spec if /^#{Regexp.escape(gem_name)}/i =~ spec.full_name; ary }.sort_by { |gem| gem.version }.reverse
