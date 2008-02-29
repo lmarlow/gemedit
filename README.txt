@@ -30,6 +30,10 @@ And of course, help is available:
   $ gemedit -h
   $ gemedit --help
 
+== DOCUMENTATION:
+
+There isn't much more to document than what is on this page, but feel free to browse the RDoc[http://gemedit.rubyforge.org/rdoc/].  Or checkout the Rubyforge project page here[http://rubyforge.org/projects/gemedit/].
+
 == SOURCE REPOSITORY:
 
 The source is currently on github[http://github.com/].  You can browse through it at http://github.com/lmarlow/gemedit or pull it down and play with it yourself with 

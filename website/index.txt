@@ -28,6 +28,10 @@ And of course, help is available:
   <pre><code>$ gemedit -h</code></pre>
   <pre><code>$ gemedit --help</code></pre>
 
+h2. Documentation:
+
+There isn't much more to document than what is on this page, but feel free to browse the "RDoc":http://gemedit.rubyforge.org/rdoc/.  Or checkout the Rubyforge "project page":http://rubyforge.org/projects/gemedit/.
+
 h2. Source Repository:
 
 The source is currently on "github":http://github.com/.  You can browse through it at "http://github.com/lmarlow/gemedit":http://github.com/lmarlow/gemedit or pull it down and play with it yourself with 
