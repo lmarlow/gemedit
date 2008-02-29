@@ -7,16 +7,32 @@ h2. What
 
 Gemedit lets you quickly open up the source for a gem in your favorite editor.
 
+Looking through other people's code is a great way to learn.  I often use it when a gem's RDoc isn't as helpful as I'd like or just want to see how someone put a library together.  Gemedit just makes it easier to get to the code.
+
 h2. Installing
 
-<pre><code>sudo gem install gemedit</code></pre>
+<pre><code>$ sudo gem install gemedit</code></pre>
 
-If you would like some basic command completion for installed gems add the following to your <code>~/.bashrc</code> or <code>~/.profile</code>:
+If you would like some basic command completion for installed gems add the following to your @~/.bashrc@ or @~/.profile@:
 <pre><code>complete -C "/usr/bin/gemedit --complete" gemedit</code></pre>
 
 h2. Demonstration of usage
 
-gemedit gemedit
+If you want to see how gemedit works just install it and run this:
+  <pre><code>$ gemedit gemedit</code></pre>
+
+Gemedit tries to use your favorite editor from your @$VISUAL@ or @$EDITOR@ environment variable.  It will fall back to _everyone's_ favorite editor: *vi*.  You can specify the editor with the @-e/--editor@ switch.  Run this to view the source for @rake@ in "TextMate":http://macromates.com:
+  <pre><code>$ gemedit -e mate rake</code></pre>
+
+And of course, help is available:
+  <pre><code>$ gemedit -h</code></pre>
+  <pre><code>$ gemedit --help</code></pre>
+
+h2. Source Repository:
+
+The source is currently on "github":http://github.com/.  You can browse through it at "http://github.com/lmarlow/gemedit":http://github.com/lmarlow/gemedit or pull it down and play with it yourself with 
+
+  <pre><code>$ git clone git://github.com/lmarlow/gemedit.git</code></pre>
 
 h2. License
 
