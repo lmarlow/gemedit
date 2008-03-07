@@ -1,3 +1,8 @@
+== 0.0.2 2008-03-07
+
+* 1 minor enhancement:
+  * add -p/--pretend option to show what gem(s) would be edited and with what command
+
 == 0.0.1 2008-02-27
 
 * 1 major enhancement:

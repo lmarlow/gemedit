@@ -13,6 +13,7 @@ require 'optparse'
 
 OPTIONS = {
   :verbose => false,
+  :pretend => false,
   :editor => ENV['VISUAL'] || ENV['EDITOR'] || 'vi'
 }
 
@@ -24,9 +25,12 @@ Usage: #{File.basename($0)} GEM_NAME...
 
 Options are:
 BANNER
-  opts.separator ""
   opts.on("-e", "--editor=EDITOR", String,
           "The editor to open the gems with", "Default: #{OPTIONS[:editor]}") { |editor| OPTIONS[:editor] = editor }
+  opts.on("-p", "--pretend",
+          "Shows what command would be run without running it", "Turns on verbose logging", "Default: #{OPTIONS[:pretend]}") { |pretend|
+            OPTIONS[:pretend] = OPTIONS[:verbose] = true
+  }
   opts.on("-v", "--verbose",
           "Enable verbose logging", "Default: #{OPTIONS[:verbose]}") { |verbose| OPTIONS[:verbose] = true }
   opts.on("-h", "--help",
@@ -79,7 +83,7 @@ if gems.size > 0
   end
   cmd = "#{OPTIONS[:editor]} #{paths.join(' ')}"
   puts "Running `#{cmd}`" if OPTIONS[:verbose]
-  exec cmd
+  exec cmd unless OPTIONS[:pretend]
 else
   puts "No gems found for editing"
 end
