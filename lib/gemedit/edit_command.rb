@@ -63,7 +63,11 @@ class Gem::Commands::EditCommand < Gem::Command
         say "  #{spec.full_name} #{spec.full_gem_path}" if Gem.configuration.verbose
         %Q{"#{spec.full_gem_path}"}
       end
-      cmd = "#{options[:editor]} #{paths.join(' ')}"
+      cmds = paths.collect do |path|
+        "(cd #{path} && #{options[:editor]} #{path})"
+      end
+      cmd = cmds.join("&&")
+
       say "Running `#{cmd}`" if Gem.configuration.verbose
       exec cmd unless options[:dryrun]
     else
