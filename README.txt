@@ -14,21 +14,17 @@ Gemedit can be installed via RubyGems:
 
   $ sudo gem install gemedit
 
-If you would like some basic command completion for installed gems add the following to your ~/.bashrc or ~/.profile:
-
-  complete -C "/usr/bin/gemedit --complete" gemedit
-
 == USAGE:
 
 If you want to see how gemedit works just install it and run this:
-  $ gemedit gemedit
+  $ gem edit gemedit
 
-Gemedit tries to use your favorite editor from your <tt>$VISUAL</tt> or <tt>$EDITOR</tt> environment variable.  It will fall back to <em>everyone's</em> favorite editor: *vi*.  You can specify the editor with the <tt>-e/--editor</tt> switch.  Run this to view the source for +rake+ in TextMate[http://macromates.com]:
-  $ gemedit -e mate rake
+Gemedit tries to use your favorite editor from your <tt>$GEMEDITOR</tt>, <tt>$VISUAL</tt> or <tt>$EDITOR</tt> environment variable.  It will fall back to <em>everyone's</em> favorite editor: *vi*.  You can specify the editor with the <tt>-e/--editor</tt> switch.  Run this to view the source for +rake+ in TextMate[http://macromates.com]:
+  $ gem edit -e mate rake
 
 And of course, help is available:
-  $ gemedit -h
-  $ gemedit --help
+  $ gem edit -h
+  $ gem edit --help
 
 == DOCUMENTATION:
 

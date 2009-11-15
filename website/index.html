@@ -33,70 +33,33 @@
     <h1>Gem Editor</h1>
     <div id="version" class="clickable" onclick='document.location = "http://rubyforge.org/projects/gemedit"; return false'>
       <p>Get Version</p>
-      <a href="http://rubyforge.org/projects/gemedit" class="numbers">0.0.2</a>
+      <a href="http://rubyforge.org/projects/gemedit" class="numbers">0.9.0</a>
     </div>
-    <h1>&#x2192; &#8216;gemedit&#8217;</h1>
-
-
-	<h2>What</h2>
-
-
-	<p>Gemedit lets you quickly open up the source for a gem in your favorite editor.</p>
-
-
-	<p>Looking through other people&#8217;s code is a great way to learn.  I often use it when a gem&#8217;s RDoc isn&#8217;t as helpful as I&#8217;d like or just want to see how someone put a library together.  Gemedit just makes it easier to get to the code.</p>
-
-
-	<h2>Installing</h2>
-
-
+    <h1>&#8216;gemedit&#8217;</h1>
+<h2>What</h2>
+<p>Gemedit lets you quickly open up the source for a gem in your favorite editor.</p>
+<p>Looking through other people&#8217;s code is a great way to learn.  I often use it when a gem&#8217;s RDoc isn&#8217;t as helpful as I&#8217;d like or just want to see how someone put a library together.  Gemedit just makes it easier to get to the code.</p>
+<h2>Installing</h2>
 <pre><code>$ sudo gem install gemedit</code></pre>
-
-If you would like some basic command completion for installed gems add the following to your <code>~/.bashrc</code> or <code>~/.profile</code>:
-<pre><code>complete -C "/usr/bin/gemedit --complete" gemedit</code></pre>
-
-	<h2>Demonstration of usage</h2>
-
-
-	<p>If you want to see how gemedit works just install it and run this:
-  <pre><code>$ gemedit gemedit</code></pre></p>
-
-
-	<p>Gemedit tries to use your favorite editor from your <code>$VISUAL</code> or <code>$EDITOR</code> environment variable.  It will fall back to <em>everyone&#8217;s</em> favorite editor: <strong>vi</strong>.  You can specify the editor with the <code>-e/--editor</code> switch.  Run this to view the source for <code>rake</code> in <a href="http://macromates.com">TextMate</a>:
-  <pre><code>$ gemedit -e mate rake</code></pre></p>
-
-
-	<p>And of course, help is available:
-  <pre><code>$ gemedit -h</code></pre>
-  <pre><code>$ gemedit --help</code></pre></p>
-
-
-	<h2>Documentation:</h2>
-
-
-	<p>There isn&#8217;t much more to document than what is on this page, but feel free to browse the <a href="http://gemedit.rubyforge.org/rdoc/">RDoc</a>.  Or checkout the Rubyforge <a href="http://rubyforge.org/projects/gemedit/">project page</a>.</p>
-
-
-	<h2>Source Repository:</h2>
-
-
-	<p>The source is currently on <a href="http://github.com/">github</a>.  You can browse through it at <a href="http://github.com/lmarlow/gemedit">http://github.com/lmarlow/gemedit</a> or pull it down and play with it yourself with </p>
-
-
+<h2>Demonstration of usage</h2>
+<p>If you want to see how gemedit works just install it and run this:<br />
+  <pre><code>$ gem edit gemedit</code></pre></p>
+<p>Gemedit tries to use your favorite editor from your <code>$GEMEDITOR</code>, <code>$VISUAL</code> or <code>$EDITOR</code> environment variable.  It will fall back to <em>everyone&#8217;s</em> favorite editor: <strong>vi</strong>.  You can specify the editor with the <code>-e/--editor</code> switch.  Run this to view the source for <code>rake</code> in <a href="http://macromates.com">TextMate</a>:<br />
+  <pre><code>$ gem edit -e mate rake</code></pre></p>
+<p>And of course, help is available:<br />
+  <pre><code>$ gem edit -h</code></pre><br />
+  <pre><code>$ gem edit --help</code></pre></p>
+<h2>Documentation:</h2>
+<p>There isn&#8217;t much more to document than what is on this page, but feel free to browse the <a href="http://gemedit.rubyforge.org/rdoc/">RDoc</a>.  Or checkout the Rubyforge <a href="http://rubyforge.org/projects/gemedit/">project page</a>.</p>
+<h2>Source Repository:</h2>
+<p>The source is currently on <a href="http://github.com/">github</a>.  You can browse through it at <a href="http://github.com/lmarlow/gemedit">http://github.com/lmarlow/gemedit</a> or pull it down and play with it yourself with</p>
 <pre><code>$ git clone git://github.com/lmarlow/gemedit.git</code></pre>
-
-	<h2>License</h2>
-
-
-	<p>This code is free to use under the terms of the <span class="caps">MIT</span> license.</p>
-
-
-	<h2>Contact</h2>
-
-
-	<p>Comments are welcome. Send an email to <a href="mailto:lmarlow@rubyforge.org">Lee Marlow</a></p>
+<h2>License</h2>
+<p>This code is free to use under the terms of the <span class="caps">MIT</span> license.</p>
+<h2>Contact</h2>
+<p>Comments are welcome. Send an email to <a href="mailto:lmarlow@rubyforge.org">Lee Marlow</a></p>
     <p class="coda">
-      <a href="mailto:lmarlow@rubyforge.org">Lee Marlow</a>, 7th March 2008<br>
+      <a href="mailto:lmarlow@rubyforge.org">Lee Marlow</a>, 15th November 2009<br>
       Theme extended from <a href="http://rb2js.rubyforge.org/">Paul Battley</a>
     </p>
 </div>

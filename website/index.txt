@@ -1,6 +1,6 @@
 h1. Gem Editor
 
-h1. &#x2192; 'gemedit'
+h1. 'gemedit'
 
 
 h2. What
@@ -13,20 +13,17 @@ h2. Installing
 
 <pre><code>$ sudo gem install gemedit</code></pre>
 
-If you would like some basic command completion for installed gems add the following to your @~/.bashrc@ or @~/.profile@:
-<pre><code>complete -C "/usr/bin/gemedit --complete" gemedit</code></pre>
-
 h2. Demonstration of usage
 
 If you want to see how gemedit works just install it and run this:
-  <pre><code>$ gemedit gemedit</code></pre>
+  <pre><code>$ gem edit gemedit</code></pre>
 
-Gemedit tries to use your favorite editor from your @$VISUAL@ or @$EDITOR@ environment variable.  It will fall back to _everyone's_ favorite editor: *vi*.  You can specify the editor with the @-e/--editor@ switch.  Run this to view the source for @rake@ in "TextMate":http://macromates.com:
-  <pre><code>$ gemedit -e mate rake</code></pre>
+Gemedit tries to use your favorite editor from your @$GEMEDITOR@, @$VISUAL@ or @$EDITOR@ environment variable.  It will fall back to _everyone's_ favorite editor: *vi*.  You can specify the editor with the @-e/--editor@ switch.  Run this to view the source for @rake@ in "TextMate":http://macromates.com:
+  <pre><code>$ gem edit -e mate rake</code></pre>
 
 And of course, help is available:
-  <pre><code>$ gemedit -h</code></pre>
-  <pre><code>$ gemedit --help</code></pre>
+  <pre><code>$ gem edit -h</code></pre>
+  <pre><code>$ gem edit --help</code></pre>
 
 h2. Documentation:
 

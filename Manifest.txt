@@ -2,5 +2,7 @@ History.txt
 License.txt
 README.txt
 bin/gemedit
+lib/rubygems_plugin.rb
 lib/gemedit.rb
 lib/gemedit/version.rb
+lib/gemedit/edit_command.rb
