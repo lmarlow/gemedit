@@ -8,4 +8,4 @@ module Gemedit #:nodoc:
   end
 
   Version = VERSION::STRING
-end
+end unless defined? Gemedit::Version
