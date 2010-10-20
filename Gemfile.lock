@@ -1,0 +1,14 @@
+PATH
+  remote: .
+  specs:
+    gemedit (1.0.0)
+
+GEM
+  specs:
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bundler (>= 1.0.0)
+  gemedit!

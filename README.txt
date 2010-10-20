@@ -1,6 +1,6 @@
- gemedit
-	http://gemedit.rubyforge.org/
-	by Lee Marlow
+gemedit
+  http://gemedit.rubyforge.org/
+  by Lee Marlow
 
 == DESCRIPTION:
 
