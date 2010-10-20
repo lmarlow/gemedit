@@ -31,7 +31,7 @@ end
 REV = nil 
 # UNCOMMENT IF REQUIRED: 
 # REV = `svn info`.each {|line| if line =~ /^Revision:/ then k,v = line.split(': '); break v.chomp; else next; end} rescue nil
-VERS = Gemedit::VERSION::STRING + (REV ? ".#{REV}" : "")
+VERS = Gemedit::Version + (REV ? ".#{REV}" : "")
 RDOC_OPTS = ['--quiet', '--title', 'gemedit documentation',
     "--opname", "index.html",
     "--line-numbers", 

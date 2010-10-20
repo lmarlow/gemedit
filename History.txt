@@ -1,3 +1,8 @@
+== 0.10.0 2010-06-15
+
+* 1 minor enhancement:
+  * cd to directory before starting editor. Good for using NERDtree in vim for example. via alkesh
+
 == 0.9.0 2009-11-15
 
 * 1 major change:

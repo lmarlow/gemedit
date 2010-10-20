@@ -57,15 +57,19 @@ class Gem::Commands::EditCommand < Gem::Command
       spec
     }.compact
 
-    if gem_specs.size > 0
-      say "Opening the following gems with #{options[:editor]}:" if Gem.configuration.verbose
-      paths = gem_specs.map do |spec|
-        say "  #{spec.full_name} #{spec.full_gem_path}" if Gem.configuration.verbose
-        %Q{"#{spec.full_gem_path}"}
-      end
-      cmd = "#{options[:editor]} #{paths.join(' ')}"
-      say "Running `#{cmd}`" if Gem.configuration.verbose
-      exec cmd unless options[:dryrun]
+    if gem_specs.size == 1
+      say "Opening the following gem with #{options[:editor]}:" if Gem.configuration.verbose
+      spec = gem_specs.first
+      say "  #{spec.full_name} #{spec.full_gem_path}" if Gem.configuration.verbose
+      path = spec.full_gem_path
+      cmd = "#{options[:editor]} ."
+      say %Q(Running `#{cmd}` from "#{spec.full_gem_path}") if Gem.configuration.verbose
+      Dir.chdir(spec.full_gem_path) do
+        exec cmd
+      end unless options[:dryrun]
+    elsif gem_spec.size > 1
+      say "Please be more specific, more than one gem found for #{get_all_gem_names.join(', ')}"
+      raise Gem::SystemExitException, 2
     else
       say "No gems found for #{get_all_gem_names.join(', ')}"
       raise Gem::SystemExitException, 1
