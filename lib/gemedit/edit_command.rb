@@ -67,7 +67,7 @@ class Gem::Commands::EditCommand < Gem::Command
       Dir.chdir(spec.full_gem_path) do
         exec cmd
       end unless options[:dryrun]
-    elsif gem_spec.size > 1
+    elsif gem_specs.size > 1
       say "Please be more specific, more than one gem found for #{get_all_gem_names.join(', ')}"
       raise Gem::SystemExitException, 2
     else
