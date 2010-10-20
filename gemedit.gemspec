@@ -2,7 +2,7 @@ require File.expand_path("../lib/gemedit/version", __FILE__)
 
 Gem::Specification.new do |s|
   s.name              = "gemedit"
-  s.version           = Gemedit.Version
+  s.version           = Gemedit::Version
   s.date              = Time.now.strftime('%Y-%m-%d')
   s.summary           = "A utility to view a gem's source in your favorite editor"
   s.homepage          = "http://github.com/lmarlow/gemedit"

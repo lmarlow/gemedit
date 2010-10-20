@@ -7,8 +7,5 @@ module Gemedit #:nodoc:
     STRING = [MAJOR, MINOR, TINY].join('.')
   end
 
-  def Version
-    VERSION::STRING
-  end
-  module_function :Version
+  Version = VERSION::STRING
 end
