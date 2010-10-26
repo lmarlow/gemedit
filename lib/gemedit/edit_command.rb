@@ -48,18 +48,8 @@ class Gem::Commands::EditCommand < Gem::Command
   def execute
     version = options[:version] || OPTIONS[:version]
 
-    gem_specs = get_all_gem_names.map { |gem_name|
-      if spec = Gem.source_index.find_name(gem_name, version).last
-        say "Found gem for '#{gem_name}' with version #{version}" if Gem.configuration.verbose
-      else
-        say "No gem found for '#{gem_name}' with version #{version}" if Gem.configuration.verbose
-      end
-      spec
-    }.compact
-
-    if gem_specs.size == 1
+    if spec = Gem.source_index.find_name(get_one_gem_name, version).last
       say "Opening the following gem with #{options[:editor]}:" if Gem.configuration.verbose
-      spec = gem_specs.first
       say "  #{spec.full_name} #{spec.full_gem_path}" if Gem.configuration.verbose
       path = spec.full_gem_path
       cmd = "#{options[:editor]} ."
@@ -67,12 +57,8 @@ class Gem::Commands::EditCommand < Gem::Command
       Dir.chdir(spec.full_gem_path) do
         exec cmd
       end unless options[:dryrun]
-    elsif gem_specs.size > 1
-      say "Please be more specific, more than one gem found for #{get_all_gem_names.join(', ')}"
-      raise Gem::SystemExitException, 2
     else
-      say "No gems found for #{get_all_gem_names.join(', ')}"
-      raise Gem::SystemExitException, 1
+      raise Gem::CommandLineError, "No gems found for #{options[:args].join(', ')}"
     end
   end
 end
