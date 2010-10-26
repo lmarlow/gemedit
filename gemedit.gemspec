@@ -23,5 +23,9 @@ desc
   s.required_rubygems_version = ">= 1.3.6"
   s.rubyforge_project         = "gemedit"
 
-  s.add_development_dependency "bundler", ">= 1.0.0"
+  s.add_development_dependency "bundler",  "~> 1.0.0"
+  s.add_development_dependency "rake",     "~> 0.8.7"
+  s.add_development_dependency "cucumber", "~> 0.9.3"
+  s.add_development_dependency "aruba",    "~> 0.2.3"
+  s.add_development_dependency "rspec",    "~> 2.0.1"
 end
