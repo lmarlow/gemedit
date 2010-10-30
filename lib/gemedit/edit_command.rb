@@ -28,7 +28,7 @@ class Gem::Commands::EditCommand < Gem::Command
     add_option('-d', '--[no-]dry-run',
                'Shows what command would be run without running it',
                'Turns on verbose logging', "Default: #{OPTIONS[:dryrun]}") do |dryrun, options|
-      Gem.configuration.verbose ||= true if dryrun
+      Gem.configuration.verbose = true if dryrun
       options[:dryrun] = dryrun
     end
   end
@@ -49,11 +49,8 @@ class Gem::Commands::EditCommand < Gem::Command
     version = options[:version] || OPTIONS[:version]
 
     if spec = Gem.source_index.find_name(get_one_gem_name, version).last
-      say "Opening the following gem with #{options[:editor]}:" if Gem.configuration.verbose
-      say "  #{spec.full_name} #{spec.full_gem_path}" if Gem.configuration.verbose
-      path = spec.full_gem_path
+      say "Opening the #{spec.name} gem, version #{spec.version}, with #{options[:editor]} from #{spec.full_gem_path}" if Gem.configuration.verbose
       cmd = "#{options[:editor]} ."
-      say %Q(Running `#{cmd}` from "#{spec.full_gem_path}") if Gem.configuration.verbose
       Dir.chdir(spec.full_gem_path) do
         exec cmd
       end unless options[:dryrun]

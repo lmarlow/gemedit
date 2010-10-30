@@ -6,7 +6,7 @@ Feature: Output
 
   Scenario: normal verbose output
     When I run "bundle exec gem edit gemedit --dry-run"
-    Then the output should contain "Opening the following"
+    Then the output should contain "Opening the gemedit gem"
 
   Scenario: unknown gem
     When I run "bundle exec gem edit unknowngemnotinstalledonthesystem"
