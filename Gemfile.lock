@@ -6,9 +6,9 @@ PATH
 GEM
   remote: http://rubygems.org/
   specs:
-    aruba (0.2.3)
+    aruba (0.2.4)
       background_process
-      cucumber (~> 0.9.0)
+      cucumber (~> 0.9.3)
     background_process (1.2)
     builder (2.1.2)
     cucumber (0.9.3)
@@ -22,7 +22,6 @@ GEM
       json (~> 1.4.6)
       term-ansicolor (~> 1.0.5)
     json (1.4.6)
-    rake (0.8.7)
     rspec (2.0.1)
       rspec-core (~> 2.0.1)
       rspec-expectations (~> 2.0.1)
@@ -39,9 +38,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  aruba (~> 0.2.3)
+  aruba (~> 0.2.4)
   bundler (~> 1.0.0)
-  cucumber (~> 0.9.3)
   gemedit!
-  rake (~> 0.8.7)
   rspec (~> 2.0.1)
