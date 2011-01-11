@@ -1,8 +1,0 @@
-#!/usr/bin/env ruby
-#
-#  Created on 2008-2-27.
-#  Copyright (c) 2008. All rights reserved.
-
-$stderr.puts 'gemedit is now a gem command, see gem edit --help'
-
-exit 1
