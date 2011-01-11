@@ -1,7 +1,11 @@
-== 0.10.0 2010-06-15
+== 1.0.0 2011-01-11
 
-* 1 minor enhancement:
+* 1 major enhancement:
   * cd to directory before starting editor. Good for using NERDtree in vim for example. via alkesh
+* Other changes:
+  * removed gemedit executable since it runs as a rubygems command
+  * tested with cucumber
+  * reduced development depencies
 
 == 0.9.0 2009-11-15
 
