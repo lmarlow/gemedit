@@ -1,4 +1,15 @@
-require 'config/requirements'
-require 'config/hoe' # setup Hoe + all gem configuration
+require 'bundler'
+Bundler::GemHelper.install_tasks
 
-Dir['tasks/**/*.rake'].each { |rake| load rake }
+require 'rake/testtask'
+Rake::TestTask.new do |t|
+  t.libs << 'lib'
+  t.pattern = 'test/**/*_test.rb'
+  t.verbose = false
+end
+
+require 'cucumber/rake/task'
+Cucumber::Rake::Task.new
+task :cucumber => :install
+
+task :default => [:test, :cucumber]
