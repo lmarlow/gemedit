@@ -24,6 +24,6 @@ desc
   s.rubyforge_project         = "gemedit"
 
   s.add_development_dependency "bundler",  "~> 1.0.0"
-  s.add_development_dependency "aruba",    "~> 0.2.4"
-  s.add_development_dependency "rspec",    "~> 2.0.1"
+  s.add_development_dependency "aruba",    "~> 0.3.2"
+  s.add_development_dependency "rspec",    "~> 2.3.0"
 end
