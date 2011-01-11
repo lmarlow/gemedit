@@ -10,13 +10,15 @@ Feature: Editor
     Then the output should contain "with <editor> from"
 
     Examples:
-      | editor   | editor-arg     | env                                          |
-      |  vi      |                |                                              |
-      |  arged   | --editor=arged |                                              |
-      |  arged   | -e arged       |                                              |
-      |  mygemed |                | GEMEDITOR=mygemed                            |
-      |  myvised |                | VISUAL=myvised                               |
-      |  myed    |                | EDITOR=myed                                  |
-      |  arged   | --editor=arged | GEMEDITOR=mygemed VISUAL=myvised EDITOR=myed |
-      |  mygemed |                | GEMEDITOR=mygemed VISUAL=myvised EDITOR=myed |
-      |  myvised |                | VISUAL=myvised EDITOR=myed                   |
+      | editor       | editor-arg     | env                                                                     |
+      |  vi          |                |                                                                         |
+      |  arged       | --editor=arged |                                                                         |
+      |  arged       | -e arged       |                                                                         |
+      |  mygemed     |                | GEMEDITOR=mygemed                                                       |
+      |  mybundlered |                | BUNDLER_EDITOR=mybundlered                                              |
+      |  myvised     |                | VISUAL=myvised                                                          |
+      |  myed        |                | EDITOR=myed                                                             |
+      |  arged       | --editor=arged | GEMEDITOR=mygemed BUNDLER_EDITOR=mybundlered VISUAL=myvised EDITOR=myed |
+      |  mygemed     |                | GEMEDITOR=mygemed BUNDLER_EDITOR=mybundlered VISUAL=myvised EDITOR=myed |
+      |  mybundlered |                | BUNDLER_EDITOR=mybundlered VISUAL=myvised EDITOR=myed                   |
+      |  myvised     |                | VISUAL=myvised EDITOR=myed                                              |

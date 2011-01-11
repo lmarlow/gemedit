@@ -2,12 +2,13 @@ require 'rubygems/command'
 require 'rubygems/version_option'
 
 class Gem::Commands::EditCommand < Gem::Command
+  EDITOR_ENV_VARS = %w( GEMEDITOR BUNDLER_EDITOR VISUAL EDITOR )
 
   OPTIONS = {
     :version => Gem::Requirement.default,
     :verbose => false,
     :dryrun => false,
-    :editor => ENV['GEMEDITOR'] || ENV['VISUAL'] || ENV['EDITOR'] || 'vi'
+    :editor => EDITOR_ENV_VARS.map { |var| ENV[var] }.compact.first || 'vi'
   }
 
   include Gem::VersionOption
@@ -19,8 +20,8 @@ class Gem::Commands::EditCommand < Gem::Command
 
     add_option('-e', '--editor EDITOR', String,
                'The editor to use to open the gems',
-               'GEMEDITOR, VISUAL and EDITOR environment variables',
-               'are used to find the default',
+               'GEMEDITOR, BUNDLER_EDITOR, VISUAL and EDITOR',
+               'environment variables are used to find the default',
                "Default: #{OPTIONS[:editor]}") do |editor, options|
       options[:editor] = editor
     end
