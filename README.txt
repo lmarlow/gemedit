@@ -1,3 +1,5 @@
+https://secure.travis-ci.org/[chaffeqa]/[gemedit].png
+
 gemedit
   https://github.com/lmarlow/gemedit
   by Lee Marlow
