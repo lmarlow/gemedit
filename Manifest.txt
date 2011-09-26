@@ -1,6 +1,6 @@
 History.txt
 License.txt
-README.txt
+README.rdoc
 bin/gemedit
 lib/rubygems_plugin.rb
 lib/gemedit.rb
