@@ -1,6 +1,8 @@
-gemedit
+= Gemedit
   https://github.com/lmarlow/gemedit
   by Lee Marlow
+
+{<img src="http://travis-ci.org/chaffeqa/gemedit.png" />}[http://travis-ci.org/chaffeqa/gemedit]
 
 == DESCRIPTION:
 

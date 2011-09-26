@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.authors           = [ "Lee Marlow" ]
   s.has_rdoc          = false
 
-  s.files             = %w( README.txt History.txt Rakefile License.txt )
+  s.files             = %w( README.rdoc History.txt Rakefile License.txt )
   s.files            += Dir.glob("lib/**/*")
   s.require_path      = 'lib'
 
@@ -24,4 +24,5 @@ desc
   s.add_development_dependency "bundler",  "~> 1.0.0"
   s.add_development_dependency "aruba",    "~> 0.3.2"
   s.add_development_dependency "rspec",    "~> 2.3.0"
+  s.add_development_dependency "rake"
 end
