@@ -48,15 +48,15 @@ class Gem::Commands::EditCommand < Gem::Command
 
   def execute
     version = options[:version] || OPTIONS[:version]
-
-    if spec = Gem.source_index.find_name(get_one_gem_name, version).last
+    begin
+      spec = Gem::Specification.find_by_name(get_one_gem_name, version)
       say "Opening the #{spec.name} gem, version #{spec.version}, with #{options[:editor]} from #{spec.full_gem_path}" if Gem.configuration.verbose
       cmd = "#{options[:editor]} ."
       Dir.chdir(spec.full_gem_path) do
         exec cmd
       end unless options[:dryrun]
-    else
-      raise Gem::CommandLineError, "No gems found for #{options[:args].join(', ')}"
+    rescue Exception => e
+      raise Gem::CommandLineError, "No gems found for #{options[:args].join(', ')}. #{e.message}"
     end
   end
 end
