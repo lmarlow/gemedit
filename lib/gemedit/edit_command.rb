@@ -50,10 +50,10 @@ class Gem::Commands::EditCommand < Gem::Command
     version = options[:version] || OPTIONS[:version]
     begin
       # Gem -v >= 1.8
-      if Gem::VERSION.to_f < "1.8".to_f
+      if Gem::Version.create(Gem::VERSION) < Gem::Version.create("1.8")
         # Old Gem find_by_name syntax
         spec = Gem.source_index.find_name(get_one_gem_name, version).last
-        raise "Gem not found Error." unless spec
+        raise "Gem not found error." unless spec
       else
         # New Gem find_by_name syntax
         spec = Gem::Specification.find_by_name(get_one_gem_name, version)
