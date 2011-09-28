@@ -5,9 +5,9 @@ Feature: Output
   I want my editor started from the gem's directory
 
   Scenario: echoing pwd and editor args
-    When I run "bundle exec gem edit bundler --editor='echo echo MYPWD-$(pwd)-MYPWD'"
+    When I run `bundle exec gem edit bundler --editor='echo echo MYPWD-$(pwd)-MYPWD'`
     Then the output should match / MYPWD-.*bundler.*-MYPWD/
 
   Scenario: echoing just the editor args
-    When I run "bundle exec gem edit bundler --editor='echo echo'"
+    When I run `bundle exec gem edit bundler --editor='echo echo'`
     Then the output should match /echo \.$/

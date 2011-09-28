@@ -6,7 +6,7 @@ Feature: Editor
 
   Scenario Outline: editor preference
     When I set the environment variables with "<env>"
-    When I run "bundle exec gem edit bundler <editor-arg> --dry-run"
+    When I run `bundle exec gem edit bundler <editor-arg> --dry-run`
     Then the output should contain "with <editor> from"
 
     Examples:
