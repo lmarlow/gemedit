@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.authors           = [ "Lee Marlow" ]
   s.has_rdoc          = false
 
-  s.files             = %w( README.txt History.txt Rakefile License.txt )
+  s.files             = %w( README.rdoc History.txt Rakefile License.txt )
   s.files            += Dir.glob("lib/**/*")
   s.require_path      = 'lib'
 
