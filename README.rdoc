@@ -1,6 +1,8 @@
 = Gemedit
-  https://github.com/lmarlow/gemedit
-  by Lee Marlow
+
+https://github.com/lmarlow/gemedit
+
+by Lee Marlow and contributors[https://github.com/lmarlow/gemedit/contributors]
 
 {<img src="http://travis-ci.org/lmarlow/gemedit.png" />}[http://travis-ci.org/lmarlow/gemedit]
 
