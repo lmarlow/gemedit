@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Gemedit : Gemedit lets you quickly open up the source for a gem in your favorite editor." />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Gemedit</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/lmarlow/gemedit">Fork Me on GitHub</a>
+
+          <h1 id="project_title">Gemedit</h1>
+          <h2 id="project_tagline">Gemedit lets you quickly open up the source for a gem in your favorite editor.</h2>
+
+          <section id="downloads">
+            <a class="zip_download_link" href="https://github.com/lmarlow/gemedit/zipball/master">Download this project as a .zip file</a>
+            <a class="tar_download_link" href="https://github.com/lmarlow/gemedit/tarball/master">Download this project as a tar.gz file</a>
+          </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p>by Lee Marlow and <a href="https://github.com/lmarlow/gemedit/contributors">contributors</a></p>
+
+<p><img src="http://travis-ci.org/lmarlow/gemedit.png" alt="http://travis-ci.org/lmarlow/gemedit"></p>
+
+<h2>DESCRIPTION:</h2>
+
+<p>Gemedit lets you quickly open up the source for a gem in your favorite editor.</p>
+
+<p>Looking through other people's code is a great way to learn.  I often use it
+when a gem's RDoc isn't as helpful as I'd like or just want to see how someone
+put a library together.  Gemedit just makes it easier to get to the code.</p>
+
+<h2>INSTALLATION:</h2>
+
+<p>Gemedit is installed via RubyGems and is available as a gem command:</p>
+
+<p><code>$ gem install gemedit</code></p>
+
+<h2>USAGE:</h2>
+
+<p>If you want to see how gemedit works just install it and run this:</p>
+
+<p><code>$ gem edit gemedit</code></p>
+
+<p>Gemedit tries to use your favorite editor from your <code>$GEMEDITOR</code>,
+<code>$VISUAL</code> or <code>$EDITOR</code> environment variable.  It will fall back
+to <em>everyone's</em> favorite editor: <em>vi</em>.  You can specify the editor with
+the <code>-e/--editor</code> switch.  Run this to view the source for +rake+ in
+<a href="http://macromates.com">TextMate</a>:</p>
+
+<p><code>$ gem edit -e mate rake</code></p>
+
+<p>And of course, help is available:
+<code>
+  $ gem edit -h
+  $ gem edit --help
+</code></p>
+
+<h2>SOURCE REPOSITORY:</h2>
+
+<p>The source is currently on <a href="https://github.com/">github</a> at
+<a href="https://github.com/lmarlow/gemedit">https://github.com/lmarlow/gemedit</a>. Feel free to fork it and submit pull
+requests.</p>
+
+<p><code>$ git clone <a href="https://github.com/lmarlow/gemedit.git">https://github.com/lmarlow/gemedit.git</a></code></p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Gemedit maintained by <a href="https://github.com/lmarlow">lmarlow</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-729069-2");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+
+  </body>
+</html>
